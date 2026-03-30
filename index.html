@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ada Lovelace - A Short Biography</title>
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="hero-box w3-animate-opacity">
+        <h1 class="w3-xxxlarge w3-margin-bottom title-font">Ada Lovelace</h1>
+        <!-- IMAGE SECTION -->
+          <section class="w3-container w3-margin-bottom fade-in">
+            <div class="gothic-frame">
+                <img src="img/ada-lovelace.png" class="w3-circle"
+                alt="Portrait of Ada Lovelace, English mathematician and writer">
+                
+            </div>
+          </section>
+        <p class="w3-xlarge soft-text">Mathematician and First Computer Programmer</p>
+        <hr class="accent-line">
+        <p class="w3-large soft-text">
+          A brief biography for posterity.
+        </p>
+        <a href="#biography" class="w3-button w3-margin-top custom-button">Read More</a>
+
+        <!-- Music Toggle Button -->
+        <button id="music-btn" onclick="toggleMusic()" class="w3-button custom-button w3-margin-top button-spacing">
+          🎧 Play Music
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+     <section class="main-bg">
+        <main class="w3-content w3-padding-64" style="max-width: 1000px;">
+
+          
+
+          <!-- BIOGRAPHY -->
+          <section id="biography" class="w3-container w3-margin-bottom ">
+            <div class="w3-padding-32 w3-padding-large section-card fade-in">
+              <h2 class="w3-xxlarge title-font">Biography</h2>
+              <p class="w3-large soft-text">
+                Ada Lovelace was a British mathematician. She was born in 1815 in England.
+                She worked with Charles Babbage, who created the Analytical Engine.
+                Ada Lovelace wrote the first algorithm for a machine, so she is considered
+                the first computer programmer. Her work was very important for the development
+                of modern computers. Ada Lovelace died in 1852, but her ideas are still important today.
+              </p>
+            </div>
+          </section>
+
+          <!-- MAIN WORK -->
+          <section class="w3-container w3-margin-bottom">
+            <div class="w3-padding-32 w3-padding-large section-card fade-in">
+              <h2 class="w3-xxlarge title-font">Main Work</h2>
+              <p class="w3-large soft-text">
+                Ada Lovelace’s most important work was her notes on the Analytical Engine.
+                She described how the machine could follow instructions to solve problems.
+                She also explained that computers could do more than calculations,
+                like creating music and art. Her ideas were very advanced for her time.
+              </p>
+            </div>
+          </section>
+
+          <!-- QUOTE / LEGACY -->
+          <section class="w3-container w3-margin-bottom">
+            <div class="w3-padding-32 w3-padding-large quote-box section-card fade-in">
+              <h2 class="w3-xxlarge title-font">Legacy</h2>
+              <p class="w3-xlarge soft-text">
+                Ada Lovelace is remembered as the first computer programmer.
+                Her vision helped people understand the future of technology.
+                Today, she is an important figure in the history of computing.
+              </p>
+            </div>
+          </section>
+
+        </main>
+      </section>
+
+    <!-- FOOTER -->
+    <footer class="w3-center w3-padding-20">    
+      <p class="footer-text">
+        Inglês Instrumental – Agenda 03
+      </p>
+      <p class="footer-text">
+        This site was created for educational purposes.
+      </p>
+    </footer>
+
+    <div style="display: flex; justify-content: center; ">
+      <audio id="bg-music"  loop>
+        <source src="msc/Time.MP3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- Music Toggle Script -->
+    <script>
+      let isPlaying = false;
+
+      function toggleMusic() {
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("music-btn");
+
+        if (!isPlaying) {
+          music.play();
+          btn.innerHTML = "⏸ Pause Music";
+          isPlaying = true;
+        } else {
+          music.pause();
+          btn.innerHTML = "🎧 Play Music";
+          isPlaying = false;
+        }
+      }
+    </script>
+
+    <!-- Fade-in Animation Script -->
+    <script>
+      const elements = document.querySelectorAll(".fade-in");
+
+      function checkScroll() {
+        elements.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+
+          if (top < window.innerHeight - 50) {
+            el.classList.add("visible");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", checkScroll);
+      window.addEventListener("load", checkScroll);
+    </script>
+
+</body>
+</html>
